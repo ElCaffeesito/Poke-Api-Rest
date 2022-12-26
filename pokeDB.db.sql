@@ -32,4 +32,5 @@ INSERT INTO "pokeDB" VALUES (12,'Butterfree','bug','flying',60,45,50,90,80,70,39
 INSERT INTO "pokeDB" VALUES (13,'Weedle','bug','poison',40,35,30,20,20,50,195,'Bug','shield dust','-','run away');
 INSERT INTO "pokeDB" VALUES (14,'Kakuna','bug','poison',45,25,50,25,25,35,205,'Bug','shed skin','-','-');
 INSERT INTO "pokeDB" VALUES (15,'Beedrill','bug','poison',65,90,40,45,80,75,395,'Bug','swarm','-','sniper');
+INSERT INTO "pokeDB" VALUES (16,'Pidgey','normal','flying',40,45,40,35,35,56,251,'Flying','tangled feet','keen eye','big pecks');
 COMMIT;
