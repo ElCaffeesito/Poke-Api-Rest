@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS "pokeDB" (
 	"hiddenAbility"	TEXT,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
-INSERT INTO "pokeDB" VALUES (1,'Bulbasaur','grass','posion',45,49,49,65,65,45,318,'Monster - Grass','Overgrow','-','Chlorophyll');
-INSERT INTO "pokeDB" VALUES (2,'Ivysaur','grass - posion','posion',60,62,63,80,80,60,405,'Monster - Grass','Overgrow','-','Chlorophyll');
-INSERT INTO "pokeDB" VALUES (3,'Venusaur','grass - posion','posion',80,82,83,100,100,80,525,'Monster - Grass','Overgrow','-','Chlorophyll');
+INSERT INTO "pokeDB" VALUES (1,'Bulbasaur','grass','poison',45,49,49,65,65,45,318,'Monster - Grass','Overgrow','-','Chlorophyll');
+INSERT INTO "pokeDB" VALUES (2,'Ivysaur','grass - posion','poison',60,62,63,80,80,60,405,'Monster - Grass','Overgrow','-','Chlorophyll');
+INSERT INTO "pokeDB" VALUES (3,'Venusaur','grass - posion','poison',80,82,83,100,100,80,525,'Monster - Grass','Overgrow','-','Chlorophyll');
 INSERT INTO "pokeDB" VALUES (4,'Charmander','fire','-',39,52,43,60,50,65,309,'Monster - Dragon','blaze','-','Solar Power');
 INSERT INTO "pokeDB" VALUES (5,'Charmeleon','fire','-',58,64,58,80,65,80,405,'Monster - Dragon','blaze','-','Solar Power');
 INSERT INTO "pokeDB" VALUES (6,'Charizard','fire','flying',78,84,78,109,85,100,534,'Monster - Dragon','blaze','-','Solar Power');
