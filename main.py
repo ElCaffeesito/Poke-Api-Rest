@@ -23,16 +23,23 @@ def insertPokemon():
     speedSt = pokemonDetails["speedSt"]
     totalSt = pokemonDetails["totalSt"]
     eggGroups = pokemonDetails["eggGroups"]
+    hatchTime = pokemonDetails["hatchTime"]
     ability = pokemonDetails["ability"]
     secondAbility = pokemonDetails["secondAbility"]
     hiddenAbility = pokemonDetails["hiddenAbility"]
-    result = pokemonController.insertPokemon(name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, ability, secondAbility, hiddenAbility)
+    evYield = pokemonDetails["evYield"]
+    secondEvYield = pokemonDetails["secondEvYield"]
+    catchRate = pokemonDetails["catchRate"]
+    maleRatio = pokemonDetails["maleRatio"]
+    femRatio = pokemonDetails["femRatio"]
+    result = pokemonController.insertPokemon(name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
     return jsonify(result)
 
 @app.route('/pokemon', methods=["PUT"])
 def updatePokemon():
     pokemonDetails = request.get_json()
     id = pokemonDetails["Id"]
+    pokemonDetails = request.get_json()
     name = pokemonDetails["name"]
     type = pokemonDetails["type"]
     secondType = pokemonDetails["secondType"]
@@ -44,10 +51,16 @@ def updatePokemon():
     speedSt = pokemonDetails["speedSt"]
     totalSt = pokemonDetails["totalSt"]
     eggGroups = pokemonDetails["eggGroups"]
+    hatchTime = pokemonDetails["hatchimes"]
     ability = pokemonDetails["ability"]
     secondAbility = pokemonDetails["secondAbility"]
     hiddenAbility = pokemonDetails["hiddenAbility"]
-    result = pokemonController.insertPokemon(id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, ability, secondAbility, hiddenAbility)
+    evYield = pokemonDetails["evYield"]
+    secondEvYield = pokemonDetails["secondEvYield"]
+    catchRate = pokemonDetails["catchRate"]
+    maleRatio = pokemonDetails["maleRatio"]
+    femRatio = pokemonDetails["femRatio"]
+    result = pokemonController.insertPokemon(id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
     return jsonify(result)
 
 @app.route('/pokemon/<Id>', methods=["DELETE"])
