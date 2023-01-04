@@ -73,14 +73,24 @@ def getPokemonById(id):
     pokemon = pokemonController.getById(id)
     return jsonify(pokemon)
 
-@app.route('/pokemon/<name>', methods=["GET"])
+@app.route('/pokemon/name/<name>', methods=["GET"])
 def getPokemonByName(name):
     pokemon = pokemonController.getByName(name)
     return jsonify(pokemon)
 
-@app.route('/pokemon/<type>', methods=["GET"])
+@app.route('/pokemon/type/<type>', methods=["GET"])
 def getPokemonByType(type):
     pokemon = pokemonController.getByType(type)
+    return jsonify(pokemon)
+
+@app.route('/pokemon/ability/<ability>', methods=["GET"])
+def getPokemonByAbility(ability):
+    pokemon = pokemonController.getByAbility(ability)
+    return jsonify(pokemon)
+
+@app.route('/pokemon/group/<group>', methods=["GET"])
+def getPokemonByGroup(group):
+    pokemon = pokemonController.getByGroup(group)
     return jsonify(pokemon)
 
 """
