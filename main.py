@@ -63,14 +63,24 @@ def updatePokemon():
     result = pokemonController.insertPokemon(id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
     return jsonify(result)
 
-@app.route('/pokemon/<Id>', methods=["DELETE"])
-def deletePokemon(Id):
-    result = pokemonController.deletePokemon(Id)
+@app.route('/pokemon/<id>', methods=["DELETE"])
+def deletePokemon(id):
+    result = pokemonController.deletePokemon(id)
     return jsonify(result)
 
-@app.route('/pokemon/<Id>', methods=["GET"])
-def getPokemonById(Id):
-    pokemon = pokemonController.getById(Id)
+@app.route('/pokemon/<id>', methods=["GET"])
+def getPokemonById(id):
+    pokemon = pokemonController.getById(id)
+    return jsonify(pokemon)
+
+@app.route('/pokemon/<name>', methods=["GET"])
+def getPokemonByName(name):
+    pokemon = pokemonController.getByName(name)
+    return jsonify(pokemon)
+
+@app.route('/pokemon/<type>', methods=["GET"])
+def getPokemonByType(type):
+    pokemon = pokemonController.getByType(type)
     return jsonify(pokemon)
 
 """

@@ -24,17 +24,31 @@ def deletePokemon(id):
     db.commit()
     return True 
 
-def getByid(id):
+def getById(id):
     db = getDB()
     cursor = db.cursor()
-    statement = "SELECT id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio FROM pokeDB WHERE id = ?"
+    statement = "SELECT * FROM pokeDB WHERE id = ?"
     cursor.execute(statement,[id])
-    return  cursor.fetchone()
+    return cursor.fetchone()
+
+def getByName(name):
+    db = getDB()
+    cursor = db.cursor()
+    statement = f"SELECT * FROM pokeDB WHERE name = ?"
+    cursor.execute(statement,[name])
+    return cursor.fetchone()
+
+def getByType(type):
+    db = getDB()
+    cursor = db.cursor()
+    statement = "SELECT * FROM pokeDB WHERE type = ?"
+    cursor.execute(statement,[type])
+    return cursor.fetchone()
 
 def getPokemon():
     db = getDB()
     cursor = db.cursor()
-    query = "SELECT id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio FROM pokeDB"
+    query = "SELECT * FROM pokeDB"
     cursor.execute(query)
-    return  cursor.fetchall()
+    return cursor.fetchall()
 
