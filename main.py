@@ -22,7 +22,8 @@ def insertPokemon():
     spDeffenseSt = pokemonDetails["spDeffenseSt"]
     speedSt = pokemonDetails["speedSt"]
     totalSt = pokemonDetails["totalSt"]
-    eggGroups = pokemonDetails["eggGroups"]
+    eggGroup = pokemonDetails["eggGroup"]
+    secondEggGroup = pokemonDetails["secondEggGroup"]
     hatchTime = pokemonDetails["hatchTime"]
     ability = pokemonDetails["ability"]
     secondAbility = pokemonDetails["secondAbility"]
@@ -32,7 +33,7 @@ def insertPokemon():
     catchRate = pokemonDetails["catchRate"]
     maleRatio = pokemonDetails["maleRatio"]
     femRatio = pokemonDetails["femRatio"]
-    result = pokemonController.insertPokemon(name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
+    result = pokemonController.insertPokemon(name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroup, secondEggGroup, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
     return jsonify(result)
 
 @app.route('/pokemon', methods=["PUT"])
@@ -50,8 +51,9 @@ def updatePokemon():
     spDeffenseSt = pokemonDetails["spDeffenseSt"]
     speedSt = pokemonDetails["speedSt"]
     totalSt = pokemonDetails["totalSt"]
-    eggGroups = pokemonDetails["eggGroups"]
-    hatchTime = pokemonDetails["hatchimes"]
+    eggGroup = pokemonDetails["eggGroup"]
+    secondEggGroup = pokemonDetails["secondEggGroup"]
+    hatchTime = pokemonDetails["hatchTime"]
     ability = pokemonDetails["ability"]
     secondAbility = pokemonDetails["secondAbility"]
     hiddenAbility = pokemonDetails["hiddenAbility"]
