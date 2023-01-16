@@ -95,6 +95,11 @@ def getPokemonByGroup(group):
     pokemon = pokemonController.getByGroup(group)
     return jsonify(pokemon)
 
+@app.route('/pokemon/all', methods=["GET"])
+def getAllPokemonByName():
+    pokemon = pokemonController.getAllByName()
+    return jsonify(pokemon)
+
 """
 Enable CORS. Disable it if you don't need CORS
 """
