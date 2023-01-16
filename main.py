@@ -62,7 +62,7 @@ def updatePokemon():
     catchRate = pokemonDetails["catchRate"]
     maleRatio = pokemonDetails["maleRatio"]
     femRatio = pokemonDetails["femRatio"]
-    result = pokemonController.insertPokemon(id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroups, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
+    result = pokemonController.insertPokemon(id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroup, secondEggGroup, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
     return jsonify(result)
 
 @app.route('/pokemon/<id>', methods=["DELETE"])
