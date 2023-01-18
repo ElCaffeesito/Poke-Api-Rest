@@ -1,6 +1,6 @@
 import sqlite3
 
-dataBase_Name = "pokeDB.db"
+dataBase_Name = "Kanto.db"
 
 def getDB():
     conn = sqlite3.connect(dataBase_Name)
@@ -8,7 +8,7 @@ def getDB():
 
 def createTables():
     tables = [
-        """CREATE TABLE IF NOT EXISTS pokeDB(
+        """CREATE TABLE IF NOT EXISTS Kanto(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
 	        name	TEXT NOT NULL,
 	        type	TEXT NOT NULL,
