@@ -69,7 +69,7 @@ def getPokemon():
 def getAllByName():
     db = getDB()
     cursor = db.cursor()
-    query = "SELECT name, sprite FROM pokeDB"
+    query = "SELECT name, sprite, id FROM pokeDB"
     cursor.execute(query)
     return cursor.fetchall()
 
