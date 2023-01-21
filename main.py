@@ -33,7 +33,8 @@ def insertPokemon():
     catchRate = pokemonDetails["catchRate"]
     maleRatio = pokemonDetails["maleRatio"]
     femRatio = pokemonDetails["femRatio"]
-    result = pokemonController.insertPokemon(name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroup, secondEggGroup, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
+    sprite = pokemonDetails["sprite"]
+    result = pokemonController.insertPokemon(name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroup, secondEggGroup, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio, sprite)
     return jsonify(result)
 
 @app.route('/pokemon', methods=["PUT"])

@@ -1,6 +1,6 @@
 import sqlite3
 
-dataBase_Name = "Kanto.db"
+dataBase_Name = "pokeDB.db"
 
 def getDB():
     conn = sqlite3.connect(dataBase_Name)
