@@ -78,11 +78,18 @@ def getPokemon():
     cursor.execute(query)
     return cursor.fetchall()
 
+def getRandom():
+    db = getDB()
+    cursor = db.cursor()
+    query = "SELECT * FROM pokeDB ORDER BY RANDOM() LIMIT 1;"
+    cursor.execute(query)
+    return cursor.fetchall()
+
 
 def getAllByName():
     db = getDB()
     cursor = db.cursor()
-    query = "SELECT id, name, sprite FROM pokeDB"
+    query = "SELECT id, name, type, secondType, sprite FROM pokeDB"
     cursor.execute(query)
 
     objects_list = []
@@ -91,7 +98,9 @@ def getAllByName():
         d = collections.OrderedDict()
         d["id"] = row[0]
         d["name"] = row[1]
-        d["sprite"] = row[2]
+        d["type"] = row[2]
+        d["secondType"] = row[3]
+        d["sprite"] = row[4]
         objects_list.append(d)
     pokejson = json.dumps(objects_list)
 

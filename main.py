@@ -63,7 +63,8 @@ def updatePokemon():
     catchRate = pokemonDetails["catchRate"]
     maleRatio = pokemonDetails["maleRatio"]
     femRatio = pokemonDetails["femRatio"]
-    result = pokemonController.insertPokemon(id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroup, secondEggGroup, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio)
+    sprite = pokemonDetails["sprite"]
+    result = pokemonController.insertPokemon(id, name, type, secondType, hpSt, attackSt, deffenseSt, spAttackSt, spDeffenseSt, speedSt, totalSt, eggGroup, secondEggGroup, hatchTime, ability, secondAbility, hiddenAbility, evYield, secondEvYield, catchRate, maleRatio, femRatio, sprite)
     return jsonify(result)
 
 @app.route('/pokemon/<id>', methods=["DELETE"])
@@ -99,6 +100,11 @@ def getPokemonByGroup(group):
 @app.route('/pokemon/all', methods=["GET"])
 def getAllPokemonByName():
     pokemon = pokemonController.getAllByName()
+    return jsonify(pokemon)
+
+@app.route('/random', methods=["GET"])
+def getRandomPokemon():
+    pokemon = pokemonController.getRandom()
     return jsonify(pokemon)
 
 """
