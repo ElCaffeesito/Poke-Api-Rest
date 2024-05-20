@@ -100,11 +100,13 @@ def getPokemonByGroup(group):
 @app.route('/pokemon/all', methods=["GET"])
 def getAllPokemonByName():
     pokemon = pokemonController.getAllByName()
+    print(pokemon)
     return jsonify(pokemon)
 
 @app.route('/random', methods=["GET"])
 def getRandomPokemon():
     pokemon = pokemonController.getRandom()
+    print(pokemon)
     return jsonify(pokemon)
 
 """
@@ -126,4 +128,4 @@ if __name__ == "__main__":
     Remember that, in order to make this API functional, you must set debug in False
     """
 
-    app.run(host='0.0.0.0', port=8000, debug=False)
+    app.run(host='0.0.0.0', port=4000, debug=False)

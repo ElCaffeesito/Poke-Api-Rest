@@ -83,7 +83,25 @@ def getRandom():
     cursor = db.cursor()
     query = "SELECT * FROM pokeDB ORDER BY RANDOM() LIMIT 1;"
     cursor.execute(query)
-    return cursor.fetchall()
+    objects_list = []
+    rows = cursor.fetchall()
+    for row in rows:
+        d = collections.OrderedDict()
+        d["id"] = row[0]
+        d["name"] = row[1]
+        d["type"] = row[2]
+        d["secondType"] = row[3]
+        d["hp"] = row[4]
+        d["attack"] = row[5]
+        d["deffense"] = row[6]
+        d["spAttack"] = row[7]
+        d["spDeffense"] = row[8]
+        d["speed"] = row[9]
+        d["sprite"] = row[22]
+        objects_list.append(d)
+    pokejson = json.dumps(objects_list)
+    return pokejson
+
 
 
 def getAllByName():
